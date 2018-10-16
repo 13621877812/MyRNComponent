@@ -8,10 +8,11 @@ import {
 import {
     StackNavigator,
     TabNavigator,
-    TabBarBottom
+    TabBarBottom,
+    TabBarTop
 } from 'react-navigation';
 
-
+//tabbar 上的ViewController
 import SystemComponent from '../SystemComponent/SystemComponent';
 import SystemAPI from '../SystemAPI/SystemAPI';
 import SystemLibrary from '../SystemLibrary/SystemLibrary';
@@ -30,6 +31,7 @@ const threeThirdOn = require('../../img/Tabbar/threeThird_on.png');
 const otherNormal = require('../../img/Tabbar/other.png');
 const otherOn = require('../../img/Tabbar/other_on.png');
 
+//tabBar 路由配置
 const TabBarRouteConfig = {
     SystemComponent:{
         screen:SystemComponent,
@@ -70,22 +72,38 @@ const TabBarRouteConfig = {
         }
     },
     ThirdComponent:{
-        screen:ThirdComponent
+        screen:ThirdComponent,
+        navigationOptions:{
+            headerTitle:'第三方',
+            tabBarLabel:'第三方',
+            tabBarIcon:({tintColor,focused})=>(
+             <Image source = { focused? threeThirdOn:threeThirdNormal} style={styles.tabBarIconStyle}/>
+            )
+        }
     },
     UtilityTools:{
-        screen:UtilityTools
+        screen:UtilityTools,
+        navigationOptions:{
+            headerTitle:'其他',
+            tabBarLabel:'其他',
+            tabBarIcon:({tintColor,focused})=>(
+                <Image  source={focused? otherOn:otherNormal} style={styles.tabBarIconStyle}/>
+            )
+        }
+
+      
     }
 };
-
+//
 const TabBarNavigatorConfig = {
-    initialRouteName:'SystemAPI',
+    // initialRouteName:'SystemAPI',
     swipeEnabled:true,
     tabBarComponent:TabBarBottom,
     tabBarPosition:'bottom',
     tabBarOptions:{},
     lazy:true
   }
-  
+
   const TabBar = TabNavigator(TabBarRouteConfig, TabBarNavigatorConfig);
 
 export default TabBar;
