@@ -17,7 +17,7 @@ import SystemComponent from '../SystemComponent/SystemComponent';
 import SystemAPI from '../SystemAPI/SystemAPI';
 import SystemLibrary from '../SystemLibrary/SystemLibrary';
 import ThirdComponent from '../ThirdComponent/ThirdComponent';
-import UtilityTools from '../UtilityTools/UtilityTools';
+import OtherComponent from '../UtilityTools/OtherComponent';
 
 //tabBarIcon
 const systemComponentNormal = require('../../img/Tabbar/systemComponent.png');
@@ -72,7 +72,7 @@ const TabBarRouteConfig = {
         }
     },
     ThirdComponent:{
-        screen:ThirdComponent,
+        screen:OtherComponent,
         navigationOptions:{
             headerTitle:'第三方',
             tabBarLabel:'第三方',
@@ -82,11 +82,11 @@ const TabBarRouteConfig = {
         }
     },
     UtilityTools:{
-        screen:UtilityTools,
+        screen:OtherComponent,
         navigationOptions:{
             headerTitle:'其他',
             tabBarLabel:'其他',
-            tabBarIcon:({tintColor,focused})=>(
+            tabBarIcon:({focused})=>(
                 <Image  source={focused? otherOn:otherNormal} style={styles.tabBarIconStyle}/>
             )
         }
@@ -96,7 +96,7 @@ const TabBarRouteConfig = {
 };
 //
 const TabBarNavigatorConfig = {
-    // initialRouteName:'SystemAPI',
+    initialRouteName:'SystemAPI',
     swipeEnabled:true,
     tabBarComponent:TabBarBottom,
     tabBarPosition:'bottom',
@@ -106,10 +106,19 @@ const TabBarNavigatorConfig = {
 
   const TabBar = TabNavigator(TabBarRouteConfig, TabBarNavigatorConfig);
 
-export default TabBar;
 
 
+const StackNavigationConfig = {
+   Tab:{
+       screen:TabBar,
+       navigationOptions:{
+           headerTitle:'我是标题',
+       }
+   }
+};
 
+const Navi = StackNavigator(StackNavigationConfig);
+export default Navi;
 
 
 

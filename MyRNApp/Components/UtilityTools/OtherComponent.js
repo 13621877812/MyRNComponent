@@ -8,10 +8,9 @@ class Home extends Component{
       return(
           <View>
 
-              <Text style={{margin:100}}>系统API</Text>
+              <Text style={{margin:100}}>其他界面</Text>
           </View>
       );  
     }
 }
 export default Home;
-
