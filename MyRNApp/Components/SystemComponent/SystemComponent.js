@@ -74,33 +74,34 @@ export default class SystemComponent extends Component{
                    selectItem = {this.selectItem.bind(this)}
                    />
     }
-    selectItem(params,platform,usability){
-        let component = null;
+    selectItem(params){
+        let component = params;
+        Alert.alert('提示',params);
 
-        if (usability) {
-            //组件在该平台上可用
-            Alert.alert('提示','该组件系统上使用');
-            return;
-        }else if (platform === 'iOS') {
-            //组件在ios平台上不可用
-            Alert.alert('提示','该组件只能在iOS系统上使用');
-            return;
-        }else if (platform === 'Android' ) {
-            Alert.alert('提示','该组件只能在Android系统上使用');
-            return;
-        }
+        // if (usability) {
+        //     //组件在该平台上可用
+        //     Alert.alert('提示','该组件系统上使用');
+        //     return;
+        // }else if (platform === 'iOS') {
+        //     //组件在ios平台上不可用
+        //     Alert.alert('提示','该组件只能在iOS系统上使用');
+        //     return;
+        // }else if (platform === 'Android' ) {
+        //     Alert.alert('提示','该组件只能在Android系统上使用');
+        //     return;
+        // }
 
-        switch (params) {
-            case 'FlatList':
-                component = 'FlatListPage'
-                break;
+        // switch (params) {
+        //     case 'FlatList':
+        //         component = 'FlatListPage'
+        //         break;
         
-            default:
-                component = 'ImagePage'
-                break;
-        }
+        //     default:
+        //         component = 'ImagePage'
+        //         break;
+        // }
         
-        this.params.navigation.navigate(component);
+       this.props.navigation.navigate(component);
 
     }
 

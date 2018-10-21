@@ -31,6 +31,17 @@ const threeThirdOn = require('../../img/Tabbar/threeThird_on.png');
 const otherNormal = require('../../img/Tabbar/other.png');
 const otherOn = require('../../img/Tabbar/other_on.png');
 
+
+
+//navigation 组件
+
+import ViewComponent from '../SystemComponent/ViewComponent';
+import TextComponent from '../SystemComponent/TextComponent';
+import ButtonComponent from '../SystemComponent/ButtonComponent';
+import ImageComponent from '../SystemComponent/ImageComponent';
+import TextInputComponent from '../SystemComponent/TextInputComponent';
+import WebViewComponent from '../SystemComponent/WebViewComponent';
+
 //tabBar 路由配置
 const TabBarRouteConfig = {
     SystemComponent:{
@@ -110,11 +121,46 @@ const TabBarNavigatorConfig = {
 
 const StackNavigationConfig = {
    Tab:{
-       screen:TabBar,
-       navigationOptions:{
-           headerTitle:'我是标题',
-       }
-   }
+       screen:TabBar
+    },
+    View:{
+        screen:ViewComponent,
+        navigationOptions:{
+            headerTitle:'View'
+        }
+    },
+    Text:{
+        screen:TextComponent,
+        navigationOptions:{
+            headerTitle:'Text'
+        }
+    },
+    Button:{
+        screen:ButtonComponent,
+        navigationOptions:{
+            headerTitle:'Button'
+        }
+    },
+    Image:{
+        screen:ImageComponent,
+        navigationOptions:{
+            headerTitle:'Image'
+        }
+    },
+    TextInput:{
+        screen:TextInputComponent,
+        navigationOptions:{
+            headerTitle:'TextInput'
+        }
+    },
+    WebView:{
+        screen:WebViewComponent,
+        navigationOptions:{
+            headerTitle:'WebView'
+        }
+    }
+
+   
 };
 
 const Navi = StackNavigator(StackNavigationConfig);
