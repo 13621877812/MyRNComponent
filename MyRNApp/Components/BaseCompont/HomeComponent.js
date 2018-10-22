@@ -14,7 +14,7 @@ import {
 
 //tabbar 上的ViewController
 import SystemComponent from '../SystemComponent/SystemComponent';
-import SystemAPI from '../SystemAPI/SystemAPI';
+import SystemAPIComponent from '../SystemAPI/SystemAPIComponent';
 import SystemLibrary from '../SystemLibrary/SystemLibrary';
 import ThirdComponent from '../ThirdComponent/ThirdComponent';
 import OtherComponent from '../UtilityTools/OtherComponent';
@@ -41,6 +41,10 @@ import ButtonComponent from '../SystemComponent/ButtonComponent';
 import ImageComponent from '../SystemComponent/ImageComponent';
 import TextInputComponent from '../SystemComponent/TextInputComponent';
 import WebViewComponent from '../SystemComponent/WebViewComponent';
+import ModalComponent from '../SystemComponent/ModalComponent';
+import PickerComponent from '../SystemComponent/PickerComponent';
+import SwitchComponent from '../SystemComponent/SwitchComponent';
+import SliderComponent from '../SystemComponent/SliderComponent';
 
 //tabBar 路由配置
 const TabBarRouteConfig = {
@@ -58,7 +62,7 @@ const TabBarRouteConfig = {
         }
     },
     SystemAPI:{
-        screen:SystemAPI,
+        screen:SystemAPIComponent,
         navigationOptions:{
             headerTitle:'系统API',
             tabBarLabel:'系统API',
@@ -115,7 +119,7 @@ const TabBarNavigatorConfig = {
     lazy:true
   }
 
-  const TabBar = TabNavigator(TabBarRouteConfig, TabBarNavigatorConfig);
+const TabBar = TabNavigator(TabBarRouteConfig, TabBarNavigatorConfig);
 
 
 
@@ -157,6 +161,30 @@ const StackNavigationConfig = {
         screen:WebViewComponent,
         navigationOptions:{
             headerTitle:'WebView'
+        }
+    },
+    Modal:{
+       screen:ModalComponent,
+       navigationOptions:{
+          headerTitle:'Modal'
+       }
+    },
+    Picker:{
+        screen:PickerComponent,
+        navigationOptions:{
+            headerTitle : 'Picker'
+        }
+    },
+    Switch:{
+        screen:SwitchComponent,
+        navigationOptions:{
+            headerTitle:'Switch'
+        }
+    },
+    Slider:{
+        screen:SliderComponent,
+        navigationOptions:{
+            headerTitle:'Slider'
         }
     }
 

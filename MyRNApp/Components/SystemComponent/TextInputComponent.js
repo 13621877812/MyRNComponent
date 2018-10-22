@@ -11,7 +11,7 @@ export default class WebViewComponent extends Component{
         return(
 
             <View>
-                
+                <Text>dddd</Text>
             </View>
         );
     }
