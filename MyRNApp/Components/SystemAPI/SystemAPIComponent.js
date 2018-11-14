@@ -7,6 +7,8 @@ import {
 import MySectionList from '../CustomComponent/SectionList';
 
 
+
+
 //数据列表
 const datas = [
 {
@@ -63,6 +65,8 @@ export default class SystemAPIComponent extends Component{
       alert(params);
       this.props.navigation.navigate(params);
     }
+    sel
    
 }
 
+sss 

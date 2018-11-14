@@ -187,6 +187,7 @@ const StackNavigationConfig = {
             headerTitle:'Slider'
         }
     }
+    
 
    
 };
